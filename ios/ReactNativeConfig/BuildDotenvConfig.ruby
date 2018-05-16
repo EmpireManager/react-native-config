@@ -64,8 +64,5 @@ info_plist_defines_objc = dotenv.map { |k, v| %Q(#define __RN_CONFIG_#{k}  #{v})
 path = File.join(ENV["BUILD_DIR"], "GeneratedInfoPlistDotEnv.h")
 File.open(path, "w") { |f| f.puts info_plist_defines_objc }
 
-if custom_env
-  File.delete("/tmp/envfile")
-end
 
 puts "Wrote to #{path}"
